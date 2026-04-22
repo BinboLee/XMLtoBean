@@ -1,6 +1,7 @@
 package com.XMLtoBean;
 
 import com.XMLtoBean.bean.Body0001;
+import com.XMLtoBean.bean.Body0002;
 import com.XMLtoBean.bean.RootBean;
 import com.XMLtoBean.enums.TranCodeEnum;
 import com.XMLtoBean.utils.JAXBUtil;
@@ -25,7 +26,7 @@ public class App {
     public static void main(String[] args) {
 
         // 模拟外部传入的完整XML报文
-        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><root><head><trancode>0001</trancode></head><body><Msg>我是消息内容</Msg></body></root>";
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><root><head><trancode>0002</trancode></head><body><Msg>我是消息内容</Msg><Acct>1025618745</Acct><Name>测试人员</Name></body></root>";
 
         // 1. 第一步：解析根报文，获取报文头中的交易码
         RootBean rootBean = JAXBUtil.toBean(xml, RootBean.class);
@@ -45,6 +46,13 @@ public class App {
         if (bodyObj instanceof Body0001) {
             Body0001 body = (Body0001) bodyObj;
             System.out.println("报文体Msg内容：" + body.getMsg());
+            System.out.println("报文体Acct内容：" + body.getAcct());
+        }
+
+        if (bodyObj instanceof Body0002) {
+            Body0002 body = (Body0002) bodyObj;
+            System.out.println("报文体Msg内容：" + body.getMsg());
+            System.out.println("报文体Name内容：" + body.getName());
         }
     }
 

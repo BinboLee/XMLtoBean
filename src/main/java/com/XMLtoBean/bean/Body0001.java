@@ -13,11 +13,22 @@ public class Body0001 {
     @XmlElement(name = "Msg")
     private String msg;
 
+    @XmlElement(name = "Acct")
+    private String acct;
+
     public String getMsg() {
         return msg;
     }
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public String getAcct() {
+        return acct;
+    }
+
+    public void setAcct(String acct) {
+        this.msg = acct;
     }
 }

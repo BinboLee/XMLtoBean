@@ -1,6 +1,7 @@
 package com.XMLtoBean.enums;
 
 import com.XMLtoBean.bean.Body0001;
+import com.XMLtoBean.bean.Body0002;
 
 /**
  * 交易码 -> 对应Body实体类映射
@@ -8,7 +9,8 @@ import com.XMLtoBean.bean.Body0001;
  */
 public enum TranCodeEnum {
 
-    TRAN_0001("0001", Body0001.class);
+    TRAN_0001("0001", Body0001.class),
+    TRAN_0002("0002", Body0002.class) ;
 
     private final String trancode;
     private final Class<?> bodyClass;
