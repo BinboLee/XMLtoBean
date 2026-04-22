@@ -25,10 +25,7 @@ public class App {
     public static void main(String[] args) {
 
         // 模拟外部传入的完整XML报文
-        String xml = "<root>"
-                + "<head><trancode>0001</trancode></head>"
-                + "<body><Msg>我是消息内容</Msg></body>"
-                + "</root>";
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><root><head><trancode>0001</trancode></head><body><Msg>我是消息内容</Msg></body></root>";
 
         // 1. 第一步：解析根报文，获取报文头中的交易码
         RootBean rootBean = JAXBUtil.toBean(xml, RootBean.class);
